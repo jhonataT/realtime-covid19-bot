@@ -1,0 +1,29 @@
+{
+  "name": "realtime-covid19-bot",
+  "version": "1.0.0",
+  "description": "Show covid19 information on twitter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonataT/realtime-covid19-bot.git"
+  },
+  "keywords": [
+    "node",
+    "twitter",
+    "bot",
+    "covid19"
+  ],
+  "author": "Jhonata Tenorio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhonataT/realtime-covid19-bot/issues"
+  },
+  "homepage": "https://github.com/jhonataT/realtime-covid19-bot#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "twit": "^2.2.11"
+  }
+}
