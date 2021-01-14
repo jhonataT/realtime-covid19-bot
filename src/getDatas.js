@@ -6,18 +6,24 @@ const readFile = () => JSON.parse(fs.readFileSync(process.env.JSON_PATH));
 const formattingDatas = async () => {
     const data = await readFile();
     return `
-        ${data.updateDate} 
+COVID-19 no Brasil
 
-        ----- Covid-19 -----
-        Total de casos: ${data.accumulated}, 
-        Recuperados: ${data.recoveredCases},
-        Novos casos: ${data.newCases},
-        Total de mortes: ${data.accidentalDeaths},
-        Novas mortes: ${data.newDeaths}
-        --------------------
+Casos recuperados: ${data.recoveredCases}
+Casos em acompanhamento: ${data.accompaniment}
 
-        https://covid.saude.gov.br/
-        `;
+Casos confirmados
+Acumulado: ${data.accumulated}
+Novos casos: ${data.newCases}
+
+Óbitos confirmados
+Acumulado: ${data.accidentalDeaths}
+Novos óbitos: ${data.newDeaths}
+
+Atualizado ${data.updateDate}
+Fonte: https://covid.saude.gov.br/ 
+    
+
+    `;
 }                                           
 
 module.exports = formattingDatas; 
