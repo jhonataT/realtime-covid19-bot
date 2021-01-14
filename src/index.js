@@ -1,7 +1,9 @@
 require('dotenv').config();
-let Twit = require('twit')
 
-let T = new Twit({
+const Twit = require('twit');
+const getFormattingDatas = require('./getDatas');
+
+const T = new Twit({
   consumer_key:         process.env.CONSUMER_KEY,
   consumer_secret:      process.env.CONSUMER_SECRET,
   access_token:         process.env.ACCESS_TOKEN,
@@ -10,7 +12,14 @@ let T = new Twit({
   strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
-//  tweet 'hello world!'
-T.post('statuses/update', { status: 'hello world!' }, function(err, data, response) {
-  console.log(data)
-})
+const init = async () => {
+  
+  const tweet = async () => await getFormattingDatas();
+
+  T.post('statuses/update', { status: await tweet() }, (err, data, response) => {
+    console.log(data)
+  })
+
+}
+
+init();
